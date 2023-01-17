@@ -2,64 +2,113 @@
 //  Login.swift
 //  Riang
 //
-//  Created by Cerys Watts on 13/01/2023.
+//  Created by Cerys Watts on 17/01/2023.
 //
 
 import SwiftUI
 
+let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
+let storedEmail = "Myusername"
+let storedPassword = "Mypassword"
+
 struct Login: View {
-    @State private var fName = ""
-    @State private var surname = ""
     @State private var email = ""
     @State private var password = ""
-    @State private var confirmPassword = ""
+    @State private var authenticationDidFail = false
+    @State private var authenticationDidSucceed = false
+    @State private var createAccount = false
     
     var body: some View {
-        Form {
-            TextField("First Name: ", text: $fName, prompt: Text("Required"))
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-            
-            TextField(text: $surname, prompt: Text("Required")) {
-                Text("Surname: ")
-            }
-            .textInputAutocapitalization(.never)
-            .disableAutocorrection(true)
-            
-            TextField(text: $email, prompt: Text("Required")) {
-                Text("Email: ")
-            }
-            .textInputAutocapitalization(.never)
-            .disableAutocorrection(true)
-            
-            // Hides input text
-            SecureField(text: $password, prompt: Text("Required")) {
-                Text("Password")
-            }
-            .textInputAutocapitalization(.never)
-            .disableAutocorrection(true)
-            
-            SecureField(text: $confirmPassword, prompt: Text("Required")) {
-                Text("Confirm Password: ")
-            }
-            .textInputAutocapitalization(.never)
-            .disableAutocorrection(true)
-            
-            Button("Submit") {
-                if password.elementsEqual(confirmPassword) {
-                    // Move on to settings
+        ZStack {
+            VStack {
+                if createAccount {
+                    CreateAccount()
+                } else {
+                    Text("Welcome!")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .padding(.bottom, 20)
+                    UserImage()
+                    
+                    EmailTextField(email: $email)
+                    PasswordSecureField(password: $password)
+                    
+                    if authenticationDidFail {
+                        Text("Information not correct. Try again.")
+                            .offset(y: -10)
+                            .foregroundColor(.red)
+                    }
+                    
+                    Button(action: {
+                        if self.email == storedEmail && self.password == storedPassword {
+                            self.authenticationDidSucceed = true
+                            self.authenticationDidFail = false
+                        } else {
+                            self.authenticationDidFail = true
+                            self.authenticationDidSucceed = false
+                        }
+                    }) {
+                        Text("Login")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 220, height: 60)
+                            .background(Color.green)
+                            .cornerRadius(15.0)
+                    }
+                    .sheet(isPresented: $authenticationDidSucceed) {
+                        History()
+                    }
+                    
+                    Button("Create an Account", action: {
+                        self.createAccount = true
+                    })
                 }
-                else {
-                    // Warn passwords do not match
-                }
             }
+            .padding()
+            .background(Color.white.edgesIgnoringSafeArea(.all))
         }
     }
 }
 
-
-struct Login_Preview: PreviewProvider {
+struct Login_Previews: PreviewProvider {
     static var previews: some View {
         Login()
+    }
+}
+
+struct UserImage: View {
+    var body: some View {
+        return Image("Logo")
+            .resizable()
+            .aspectRatio(UIImage(named: "Logo")!.size, contentMode: .fill)
+            .frame(width: 150, height: 150)
+            .clipped()
+            .cornerRadius(150)
+            .padding(.bottom, 75)
+    }
+}
+
+struct PasswordSecureField: View {
+    @Binding var password: String
+    
+    var body: some View {
+        SecureField("Password", text: $password)
+            .padding()
+            .background(lightGreyColor)
+            .cornerRadius(5.0)
+            .padding(.bottom, 20)
+    }
+}
+
+struct EmailTextField: View {
+    @Binding var email: String
+    
+    var body: some View {
+        TextField("Email", text: $email)
+            .padding()
+            .background(lightGreyColor)
+            .cornerRadius(5.0)
+            .padding(.bottom, 20)
     }
 }

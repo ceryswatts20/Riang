@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E6C02E429770F98002B4043 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6C02E329770F98002B4043 /* Login.swift */; };
 		0ECC5A382971744000672C21 /* RiangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A372971744000672C21 /* RiangApp.swift */; };
 		0ECC5A3A2971744000672C21 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A392971744000672C21 /* SplashScreen.swift */; };
 		0ECC5A3C2971744100672C21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECC5A3B2971744100672C21 /* Assets.xcassets */; };
@@ -14,7 +15,7 @@
 		0ECC5A492971744100672C21 /* RiangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A482971744100672C21 /* RiangTests.swift */; };
 		0ECC5A532971744100672C21 /* RiangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A522971744100672C21 /* RiangUITests.swift */; };
 		0ECC5A552971744100672C21 /* RiangUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A542971744100672C21 /* RiangUITestsLaunchTests.swift */; };
-		0ECC5A622971772300672C21 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A612971772300672C21 /* Login.swift */; };
+		0ECC5A622971772300672C21 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A612971772300672C21 /* CreateAccount.swift */; };
 		0ECC5A6429717AD600672C21 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A6329717AD600672C21 /* Settings.swift */; };
 		0ECC5A672971B36800672C21 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A662971B36800672C21 /* MainScene.swift */; };
 		0ECC5A6A2971B41100672C21 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECC5A692971B41100672C21 /* History.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E6C02E329770F98002B4043 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0ECC5A342971744000672C21 /* Riang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Riang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECC5A372971744000672C21 /* RiangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiangApp.swift; sourceTree = "<group>"; };
 		0ECC5A392971744000672C21 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		0ECC5A4E2971744100672C21 /* RiangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECC5A522971744100672C21 /* RiangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiangUITests.swift; sourceTree = "<group>"; };
 		0ECC5A542971744100672C21 /* RiangUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiangUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0ECC5A612971772300672C21 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		0ECC5A612971772300672C21 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		0ECC5A6329717AD600672C21 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0ECC5A662971B36800672C21 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		0ECC5A692971B41100672C21 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 		0ECC5A2B2971744000672C21 = {
 			isa = PBXGroup;
 			children = (
-				0ECC5A682971B36D00672C21 /* Scenes */,
 				0ECC5A362971744000672C21 /* Riang */,
 				0ECC5A472971744100672C21 /* RiangTests */,
 				0ECC5A512971744100672C21 /* RiangUITests */,
@@ -103,6 +104,7 @@
 		0ECC5A362971744000672C21 /* Riang */ = {
 			isa = PBXGroup;
 			children = (
+				0ECC5A682971B36D00672C21 /* Scenes */,
 				0ECC5A372971744000672C21 /* RiangApp.swift */,
 				0ECC5A3B2971744100672C21 /* Assets.xcassets */,
 				0ECC5A3D2971744100672C21 /* Preview Content */,
@@ -141,8 +143,9 @@
 			children = (
 				0ECC5A692971B41100672C21 /* History.swift */,
 				0ECC5A392971744000672C21 /* SplashScreen.swift */,
-				0ECC5A612971772300672C21 /* Login.swift */,
+				0ECC5A612971772300672C21 /* CreateAccount.swift */,
 				0ECC5A6329717AD600672C21 /* Settings.swift */,
+				0E6C02E329770F98002B4043 /* Login.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,8 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6C02E429770F98002B4043 /* Login.swift in Sources */,
 				0ECC5A6A2971B41100672C21 /* History.swift in Sources */,
-				0ECC5A622971772300672C21 /* Login.swift in Sources */,
+				0ECC5A622971772300672C21 /* CreateAccount.swift in Sources */,
 				0ECC5A3A2971744000672C21 /* SplashScreen.swift in Sources */,
 				0ECC5A6429717AD600672C21 /* Settings.swift in Sources */,
 				0ECC5A672971B36800672C21 /* MainScene.swift in Sources */,

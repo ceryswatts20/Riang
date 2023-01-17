@@ -8,18 +8,31 @@
 import SwiftUI
 
 struct SplashScreen: View {
+    @State var isActive: Bool = false
+    
     var body: some View {
         VStack {
-            Image("Logo")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150, height: 150)
-                .foregroundColor(.accentColor)
-            Text("Riang")
+            if self.isActive {
+                Login()
+            } else {
+                Image("Logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .foregroundColor(.accentColor)
+                Text("Riang")
+                    .font(.title)
+                    .fontWeight(.semibold)
+            }
         }
         .padding()
-        
-        
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation {
+                    self.isActive = true
+                    }
+                }
+            }
     }
 }
 
