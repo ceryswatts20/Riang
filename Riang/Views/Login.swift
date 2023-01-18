@@ -22,7 +22,11 @@ struct Login: View {
         ZStack {
             VStack {
                 if createAccount {
+                    // Open CreateAccount page
                     CreateAccount()
+                } else if authenticationDidSucceed {
+                    // Open History page
+                    Main(selectedTab: "history")
                 } else {
                     Text("Welcome!")
                         .font(.title)
@@ -56,9 +60,6 @@ struct Login: View {
                             .background(Color.green)
                             .cornerRadius(15.0)
                     }
-                    .sheet(isPresented: $authenticationDidSucceed) {
-                        History()
-                    }
                     
                     Button("Create an Account", action: {
                         self.createAccount = true
@@ -66,7 +67,7 @@ struct Login: View {
                 }
             }
             .padding()
-            .background(Color.white.edgesIgnoringSafeArea(.all))
+            .background(Image("Background-3"))
         }
     }
 }
@@ -98,6 +99,8 @@ struct PasswordSecureField: View {
             .background(lightGreyColor)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
     }
 }
 
@@ -110,5 +113,7 @@ struct EmailTextField: View {
             .background(lightGreyColor)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
     }
 }

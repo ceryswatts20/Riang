@@ -14,7 +14,8 @@ struct CreateAccount: View {
     var body: some View {
         VStack {
             if settings {
-                Settings()
+                // Open Main in settings tab
+                Main(selectedTab: "settings")
             } else {
                 Text("Create an Account")
                     .font(.title)
@@ -44,7 +45,7 @@ struct CreateAccount: View {
                         .cornerRadius(15.0)
                 }
             }
-        }
+        }.background(Image("Background-4"))
     }
 }
 
@@ -75,7 +76,7 @@ struct UserInfoView: View {
                 Text("First Name")
                 TextField("Required", text: $fName)
                     .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
+                    .autocorrectionDisabled()
                     .multilineTextAlignment(.trailing)
             }
             
@@ -83,7 +84,7 @@ struct UserInfoView: View {
                 Text("Surname")
                 TextField("Required", text: $surname)
                     .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
+                    .autocorrectionDisabled()
                     .multilineTextAlignment(.trailing)
             }
             
@@ -91,7 +92,7 @@ struct UserInfoView: View {
                 Text("Email")
                 TextField("Required", text: $email)
                     .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
+                    .autocorrectionDisabled()
                     .multilineTextAlignment(.trailing)
                     .onSubmit {
                         validEmail = isValidEmail(email: email)
@@ -112,7 +113,7 @@ struct UserInfoView: View {
                 // Hides input text
                 SecureField("Required", text: $password)
                     .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
+                    .autocorrectionDisabled()
                     .multilineTextAlignment(.trailing)
                     .onSubmit {
                         validPassword = isPasswordValid(password: password)
@@ -128,7 +129,7 @@ struct UserInfoView: View {
                 Text("Confirm Password")
                 SecureField("Required", text: $confirmPassword)
                     .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
+                    .autocorrectionDisabled()
                     .multilineTextAlignment(.trailing)
                     .onSubmit {
                         if confirmPassword != password {
@@ -144,6 +145,7 @@ struct UserInfoView: View {
             
         }
         .cornerRadius(15.0)
+        .scrollContentBackground(.hidden)
     }
 }
 

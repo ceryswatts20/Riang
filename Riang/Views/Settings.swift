@@ -9,8 +9,27 @@ import SwiftUI
 
 struct Settings: View {
     var body: some View {
-        Text("Settings Page")
-            .font(.title)
+        VStack {
+            Text("Settings")
+                .font(.title)
+                .fontWeight(.semibold)
+            
+            Form {
+                // Add navigation link
+                HStack {
+                    Text("Account")
+                }
+                HStack {
+                    Text("Logout")
+                }
+                
+                HStack {
+                    Text("Camera Roll")
+                }
+            }
+            .scrollContentBackground(.hidden)
+        }
+        .background(Image("Background-6"))
     }
 }
 

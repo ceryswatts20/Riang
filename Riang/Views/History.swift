@@ -9,8 +9,13 @@ import SwiftUI
 
 struct History: View {
     var body: some View {
-        Text("History Page")
-            .font(.title)
+        VStack {
+            
+            Text("History Page")
+                .font(.title)
+        }
+        .scrollContentBackground(.hidden)
+        .background(Image("Background-2"))
     }
 }
 
