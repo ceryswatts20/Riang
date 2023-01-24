@@ -25,7 +25,7 @@ struct Login: View {
                 CreateAccount()
             } else if authenticationDidSucceed {
                 // Open History page
-                Main(selectedTab: "history")
+                Main(history: true)
             } else {
                 Text("Welcome!")
                     .font(.title)

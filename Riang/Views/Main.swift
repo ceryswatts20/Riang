@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-
 struct Main: View {
-    @State public var selectedTab = ""
-    @State private var backgroundImage: Image = Image("Background-1")
     @State public var history = false
+    @State private var backgroundImage: Image = Image("Background-1")
     
     var body: some View {
         VStack {
@@ -22,15 +20,25 @@ struct Main: View {
                 SettingsView()
             }
             
+            Spacer()
+            
             HStack {
+                Spacer()
+                
                 Label("History", systemImage: "book").onTapGesture {
                     history = true
-                }
+                }.foregroundColor(.blue).padding().fontWeight(.medium)
+                
                 Spacer()
+                
                 Label("Settings", systemImage: "gear").onTapGesture {
                     history = false
-                }
+                }.foregroundColor(.blue).padding().fontWeight(.medium)
+                
+                Spacer()
             }
+            .background(lightGreyColor)
+            .cornerRadius(10)
         }
     }
 }
@@ -46,6 +54,17 @@ struct HistoryView: View {
         VStack {
             Text("History Page")
                 .font(.title)
+                .fontWeight(.semibold)
+            
+            ScrollView {
+                
+                VStack {
+                    Image("Temp Image").resizable().scaledToFit()
+                    Image("Temp Image 2").resizable().scaledToFit()
+                    // Add ad image
+                    Image("Temp Image 3").resizable().scaledToFit()
+                }
+            }
         }
         .scrollContentBackground(.hidden)
         .background(Image("Background-2"))

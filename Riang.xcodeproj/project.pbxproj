@@ -42,7 +42,7 @@
 		0ECC5A342971744000672C21 /* Riang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Riang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECC5A372971744000672C21 /* RiangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiangApp.swift; sourceTree = "<group>"; };
 		0ECC5A392971744000672C21 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		0ECC5A3B2971744100672C21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0ECC5A3B2971744100672C21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Riang/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		0ECC5A3E2971744100672C21 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0ECC5A442971744100672C21 /* RiangTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiangTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECC5A482971744100672C21 /* RiangTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiangTests.swift; sourceTree = "<group>"; };

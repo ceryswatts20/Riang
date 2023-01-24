@@ -15,7 +15,7 @@ struct CreateAccount: View {
         VStack {
             if settings {
                 // Open Main in settings tab
-                Main(selectedTab: "settings")
+                Main(history: false)
             } else {
                 Text("Create an Account")
                     .font(.title)
