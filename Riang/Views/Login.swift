@@ -19,56 +19,54 @@ struct Login: View {
     @State private var createAccount = false
     
     var body: some View {
-        ZStack {
-            VStack {
-                if createAccount {
-                    // Open CreateAccount page
-                    CreateAccount()
-                } else if authenticationDidSucceed {
-                    // Open History page
-                    Main(selectedTab: "history")
-                } else {
-                    Text("Welcome!")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .padding(.bottom, 20)
-                    UserImage()
-                    
-                    EmailTextField(email: $email)
-                    PasswordSecureField(password: $password)
-                    
-                    if authenticationDidFail {
-                        Text("Information not correct. Try again.")
-                            .offset(y: -10)
-                            .foregroundColor(.red)
-                    }
-                    
-                    Button(action: {
-                        if self.email == storedEmail && self.password == storedPassword {
-                            self.authenticationDidSucceed = true
-                            self.authenticationDidFail = false
-                        } else {
-                            self.authenticationDidFail = true
-                            self.authenticationDidSucceed = false
-                        }
-                    }) {
-                        Text("Login")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width: 220, height: 60)
-                            .background(Color.green)
-                            .cornerRadius(15.0)
-                    }
-                    
-                    Button("Create an Account", action: {
-                        self.createAccount = true
-                    })
+        VStack {
+            if createAccount {
+                // Open CreateAccount page
+                CreateAccount()
+            } else if authenticationDidSucceed {
+                // Open History page
+                Main(selectedTab: "history")
+            } else {
+                Text("Welcome!")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .padding(.bottom, 20)
+                UserImage()
+                
+                EmailTextField(email: $email)
+                PasswordSecureField(password: $password)
+                
+                if authenticationDidFail {
+                    Text("Information not correct. Try again.")
+                        .offset(y: -10)
+                        .foregroundColor(.red)
                 }
+                
+                Button(action: {
+                    if self.email == storedEmail && self.password == storedPassword {
+                        self.authenticationDidSucceed = true
+                        self.authenticationDidFail = false
+                    } else {
+                        self.authenticationDidFail = true
+                        self.authenticationDidSucceed = false
+                    }
+                }) {
+                    Text("Login")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 220, height: 60)
+                        .background(Color.green)
+                        .cornerRadius(15.0)
+                }
+                
+                Button("Create an Account", action: {
+                    self.createAccount = true
+                })
             }
-            .padding()
-            .background(Image("Background-3"))
         }
+        .padding()
+        .background(Image("Background-3"))
     }
 }
 
