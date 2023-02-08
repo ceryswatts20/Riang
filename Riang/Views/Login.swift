@@ -52,10 +52,10 @@ struct Login: View {
                     }
                 }) {
                     Text("Login")
-                        .font(.headline)
+                        .font(.title)
                         .foregroundColor(.white)
                         .padding()
-                        .frame(width: 220, height: 60)
+                        .frame(width: 200, height: 60)
                         .background(Color.green)
                         .cornerRadius(15.0)
                 }

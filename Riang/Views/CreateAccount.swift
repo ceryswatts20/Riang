@@ -37,7 +37,7 @@ struct CreateAccount: View {
                     //}
                 }) {
                     Text("Submit")
-                        .font(.headline)
+                        .font(.title2)
                         .foregroundColor(.white)
                         .padding()
                         .frame(width: 220, height: 60)
@@ -56,16 +56,16 @@ struct CreateAccount_Preview: PreviewProvider {
     }
 }
 struct UserInfoView: View {
-    @State private var fName = ""
-    @State private var surname = ""
-    @State private var email = ""
-    @State private var dob = Date.now
-    @State private var password = ""
-    @State private var confirmPassword = ""
+    @State var fName = ""
+    @State var surname = ""
+    @State var email = ""
+    @State var dob = Date.now
+    @State var password = ""
+    @State var confirmPassword = ""
     
-    @State private var passwordMatchFail: Bool = false
-    @State private var validPassword: Bool = true
-    @State private var validEmail: Bool = true
+    @State var passwordMatchFail: Bool = false
+    @State var validPassword: Bool = true
+    @State var validEmail: Bool = true
     
     var body: some View {
         Form {
