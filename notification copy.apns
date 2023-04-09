@@ -1,0 +1,12 @@
+{
+    "Simulator Target Bundle": "Team3.Riang-PushNotification",
+    "aps": {
+        "alert": {
+                 "title" : "I have something to show you...😁",
+                 "body" : "We have a new image waiting for you to brighten your day!"
+              },
+        "sound": "default",
+        "badge": 1
+    }
+}
+
