@@ -50,6 +50,10 @@ struct Login: View {
                         self.authenticationDidFail = true
                         self.authenticationDidSucceed = false
                     }
+                    
+                    self.authenticationDidSucceed = true
+                    self.authenticationDidFail = false
+                    
                 }) {
                     Text("Login")
                         .font(.title)

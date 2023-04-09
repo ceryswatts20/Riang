@@ -50,6 +50,14 @@ struct Main_Previews: PreviewProvider {
 }
 
 struct HistoryView: View {
+    @State private var isPresenting = false
+    @State private var isPresenting2 = false
+    @State private var isPresenting3 = false
+    @State private var isPresenting4 = false
+    @State private var isPresenting5 = false
+    @State private var isPresenting6 = false
+    @State private var isPresenting7 = false
+    
     var body: some View {
         VStack {
             Text("History Page")
@@ -58,10 +66,154 @@ struct HistoryView: View {
             
             ScrollView {
                 VStack {
-                    Image("Temp Image").resizable().scaledToFit()
-                    Image("Temp Image 2").resizable().scaledToFit()
+                    Image("Jamie and Natasha")
+                        .resizable()
+                        .scaledToFit()
+                        .fullScreenCover(isPresented: $isPresenting4, onDismiss: didDismiss) {
+                            ZStack {
+                                Label("", systemImage: "x.circle")
+                                    .position(x: 350, y: 20)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.blue)
+                                    .onTapGesture {
+                                        isPresenting4 = false
+                                    }
+                                
+                                Image("Jamie and Natasha").resizable().scaledToFit()
+                            }
+                            .background(Image("Background-4"))
+                        }
+                        .onTapGesture {
+                            isPresenting4.toggle()
+                        }
+                    
+                    Image("Nur")
+                        .resizable()
+                        .scaledToFit()
+                        .fullScreenCover(isPresented: $isPresenting5, onDismiss: didDismiss) {
+                            ZStack {
+                                Label("", systemImage: "x.circle")
+                                    .position(x: 350, y: 20)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.blue)
+                                    .onTapGesture {
+                                        isPresenting5 = false
+                                    }
+                                
+                                Image("Nur").resizable().scaledToFit()
+                            }
+                            .background(Image("Background-4"))
+                        }
+                        .onTapGesture {
+                            isPresenting5.toggle()
+                        }
+                    
+                    Image("Anisah")
+                        .resizable()
+                        .scaledToFit()
+                        .fullScreenCover(isPresented: $isPresenting6, onDismiss: didDismiss) {
+                            ZStack {
+                                Label("", systemImage: "x.circle")
+                                    .position(x: 350, y: 20)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.blue)
+                                    .onTapGesture {
+                                        isPresenting6 = false
+                                    }
+                                
+                                Image("Anisah").resizable().scaledToFit()
+                            }
+                            .background(Image("Background-4"))
+                        }
+                        .onTapGesture {
+                            isPresenting6.toggle()
+                        }
+                    
+                    Image("Temp Image")
+                        .resizable()
+                        .scaledToFit()
+                        .fullScreenCover(isPresented: $isPresenting, onDismiss: didDismiss) {
+                            ZStack {
+                                Label("", systemImage: "x.circle")
+                                    .position(x: 350, y: 20)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.blue)
+                                    .onTapGesture {
+                                        isPresenting = false
+                                    }
+                                
+                                Image("Temp Image").resizable().scaledToFit()
+                            }
+                            .background(Image("Background-4"))
+                        }
+                        .onTapGesture {
+                            isPresenting.toggle()
+                        }
+                    
+                    Image("Niffler")
+                        .resizable()
+                        .scaledToFit()
+                        .fullScreenCover(isPresented: $isPresenting7, onDismiss: didDismiss) {
+                            ZStack {
+                                Label("", systemImage: "x.circle")
+                                    .position(x: 350, y: 20)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.blue)
+                                    .onTapGesture {
+                                        isPresenting7 = false
+                                    }
+                                
+                                Image("Niffler").resizable().scaledToFit()
+                            }
+                            .background(Image("Background-4"))
+                        }
+                        .onTapGesture {
+                            isPresenting7.toggle()
+                        }
+                    
+                    Image("Temp Image 2")
+                        .resizable()
+                        .scaledToFit()
+                        .fullScreenCover(isPresented: $isPresenting2, onDismiss: didDismiss) {
+                            ZStack {
+                                Label("", systemImage: "x.circle")
+                                    .position(x: 350, y: 20)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.blue)
+                                    .onTapGesture {
+                                        isPresenting2 = false
+                                    }
+                                
+                                Image("Temp Image 2").resizable().scaledToFit()
+                            }
+                            .background(Image("Background-4"))
+                        }
+                        .onTapGesture {
+                            isPresenting2.toggle()
+                        }
+                    
                     // Add ad image
-                    Image("Temp Image 3").resizable().scaledToFit()
+                    Image("Temp Image 3")
+                        .resizable()
+                        .scaledToFit()
+                        .fullScreenCover(isPresented: $isPresenting3, onDismiss: didDismiss) {
+                            ZStack {
+                                Label("", systemImage: "x.circle")
+                                    .position(x: 350, y: 20)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.blue)
+                                    .onTapGesture {
+                                        isPresenting3 = false
+                                    }
+                                
+                                Image("Temp Image 3").resizable().scaledToFit()
+                            }
+                            .background(Image("Background-4"))
+                        }
+                        .onTapGesture {
+                            isPresenting3.toggle()
+                        }
+                    
                 }
             }
         }
@@ -70,48 +222,34 @@ struct HistoryView: View {
     }
 }
 
+func didDismiss() {
+    
+}
+
+
 struct SettingsView: View {
     
     var body: some View {
         VStack {
-            NavigationStack {
-                Text("Settings")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                NavigationLink("Account") {
-                    ExistingUserView()
-                }
-                // View Mood Report
-                NavigationLink("Mood Report") {
-                    MoodView()
-                }
-                
-                FormView()
-                
-                // Save button
-                Button(action: {
-                    
-                }) {
-                    Text("Save")
-                        .font(.title2)
-                        .bold()
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 200, height: 60)
-                        .background(Color.green)
-                        .cornerRadius(15.0)
-                }
-            }
+            Text("Settings")
+                .font(.title)
+                .fontWeight(.semibold)
+            
+            FormView()
         }
-        .padding()
         .background(Image("Background-6"))
     }
 }
 
 struct MoodView: View {
+    @State public var settings = false
+    
     var body: some View {
-        Image("Mood Report")
-            .resizable().scaledToFit()
+        VStack {
+            
+            Image("Mood Report")
+                .resizable().scaledToFit()
+        }.background(Image("Background-4"))
     }
 }
 
@@ -168,7 +306,7 @@ struct ExistingUserView: View {
     @State private var fName = ""
     @State private var surname = ""
     @State private var email = ""
-    @State private var dob = Date.now
+    @State private var dob = Date()
     @State private var password = ""
     @State private var confirmPassword = ""
     
@@ -176,110 +314,97 @@ struct ExistingUserView: View {
     @State private var validPassword: Bool = true
     @State private var validEmail: Bool = true
     
+    @State private var settings = false
+    
     var body: some View {
         
         VStack {
             if loggedOut {
                 Login()
-            } else {
-                UserImage()
-                
-                Form {
-                    // TODO:
-                    // Add empty field checks to all fields
+            }
+            else if settings {
+                FormView()
+            }
+            else {
+                VStack {
+                    UserImage()
                     
-                    ZStack {
-                        Text("Cerys").frame(maxWidth: .infinity, alignment: .trailing)
+                    Form {
+                        // TODO:
+                        // Add empty field checks to all fields
+                        
                         HStack {
-                            Text("First Name")
-                            TextField("", text: $fName)
-                                .textInputAutocapitalization(.never)
-                                .autocorrectionDisabled()
-                                .multilineTextAlignment(.trailing)
+                            Text("First Name:").frame(maxWidth: .infinity, alignment: .leading)
+                            Spacer()
+                            Text("Cerys").frame(maxWidth: .infinity, alignment: .trailing)
                         }
-                    }
-                    
-                    ZStack {
-                        Text("Watts").frame(maxWidth: .infinity, alignment: .trailing)
+                        
                         HStack {
-                            Text("Surname")
-                            TextField("", text: $surname)
-                                .textInputAutocapitalization(.never)
-                                .autocorrectionDisabled()
-                                .multilineTextAlignment(.trailing)
+                            Text("Surname:").frame(maxWidth: .infinity, alignment: .leading)
+                            Spacer()
+                            Text("Watts:").frame(maxWidth: .infinity, alignment: .trailing)
                         }
-                    }
-                    
-                    ZStack {
-                        Text("cwatts06@qub.ac.uk").frame(maxWidth: .infinity, alignment: .trailing)
+                        
                         HStack {
-                            Text("Email")
-                            TextField("", text: $email)
+                            Text("Email:").frame(maxWidth: .infinity, alignment: .leading)
+                            Spacer()
+                            Text("cwatts06@qub.ac.uk").frame(maxWidth: .infinity, alignment: .trailing).lineLimit(1)
+                        }
+                        
+                        DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date) {
+                            Text("Date of Birth:")
+                        }
+                        .onAppear {
+                            let calendar = Calendar(identifier: .gregorian)
+                            let components = DateComponents(year: 2000, month: 2, day: 8)
+                            if let customDate = calendar.date(from: components) {
+                                self.dob = customDate /// set customDate to date
+                            }
+                        }
+                        
+                        HStack {
+                            Text("Change Password")
+                            // Hides input text
+                            SecureField("Required", text: $password)
                                 .textInputAutocapitalization(.never)
                                 .autocorrectionDisabled()
                                 .multilineTextAlignment(.trailing)
                                 .onSubmit {
-                                    validEmail = isValidEmail(email: email)
+                                    validPassword = isPasswordValid(password: password)
                                 }
                         }
-                    }
-                    if !validEmail {
-                        Text("Invalid email address")
-                            .offset(y: -10)
-                            .foregroundColor(.red)
-                    }
-                    //                let stringDate = "2000-02-08"
-                    //                let dateFormatter = DateFormatter()
-                    //                dateFormatter.dateFormat = "yyyy-MM-dd"
-                    //                let date = dateFormatter.date(from: stringDate)
-                    //(date ?? Date.now)
-                    
-                    DatePicker(selection: $dob, in: ...Date.now, displayedComponents: .date) {
-                        Text("Date of Birth")
-                    }
-                    
-                    HStack {
-                        Text("Change Password")
-                        // Hides input text
-                        SecureField("Required", text: $password)
-                            .textInputAutocapitalization(.never)
-                            .autocorrectionDisabled()
-                            .multilineTextAlignment(.trailing)
-                            .onSubmit {
-                                validPassword = isPasswordValid(password: password)
-                            }
-                    }
-                    if !validPassword {
-                        Text("Invalid Password. Password must contain a capital letter, a number, a special charater and be at least 6 chars long")
-                            .offset(y: -10)
-                            .foregroundColor(.red)
-                    }
-                    
-                    HStack {
-                        Text("Confirm Password")
-                        SecureField("Required", text: $confirmPassword)
-                            .textInputAutocapitalization(.never)
-                            .autocorrectionDisabled()
-                            .multilineTextAlignment(.trailing)
-                            .onSubmit {
-                                if confirmPassword != password {
-                                    passwordMatchFail = true
+                        if !validPassword {
+                            Text("Invalid Password. Password must contain a capital letter, a number, a special charater and be at least 6 chars long")
+                                .offset(y: -10)
+                                .foregroundColor(.red)
+                        }
+                        
+                        HStack {
+                            Text("Confirm Password")
+                            SecureField("Required", text: $confirmPassword)
+                                .textInputAutocapitalization(.never)
+                                .autocorrectionDisabled()
+                                .multilineTextAlignment(.trailing)
+                                .onSubmit {
+                                    if confirmPassword != password {
+                                        passwordMatchFail = true
+                                    }
                                 }
-                            }
+                        }
+                        if passwordMatchFail {
+                            Text("Passwords do not match")
+                                .offset(y: -10)
+                                .foregroundColor(.red)
+                        }
+                        
                     }
-                    if passwordMatchFail {
-                        Text("Passwords do not match")
-                            .offset(y: -10)
-                            .foregroundColor(.red)
-                    }
+                    .cornerRadius(15.0)
+                    .scrollContentBackground(.hidden)
                     
+//                    Button("Delete Account", action: {
+//                        self.loggedOut = true
+//                    }).font(.title).foregroundColor(.red)
                 }
-                .cornerRadius(15.0)
-                .scrollContentBackground(.hidden)
-                
-                Button("Delete Account", action: {
-                    self.loggedOut = true
-                }).font(.title).foregroundColor(.red)
             }
         }
         .padding()
@@ -294,56 +419,122 @@ struct FormView: View {
     @State var isEditing = false
     @State var time = Date.now
     @State var randomTime: Bool = false
+    @State private var moodReport: Bool = false
+    @State private var account: Bool = false
     
     var body: some View {
-        Form {
-            // No. of Notifications
-            VStack {
-                Text("No. of Notifications")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.headline)
-                
-                Slider(value: $notificationNum, in: 1...5, step: 1)
-                {
-                    Text("No. of Notifications")
+        
+        ZStack {
+            if moodReport {
+                MoodView()
+            }
+            else if account {
+                ExistingUserView()
+            }
+            else {
+                NavigationStack {
+                    NavigationLink(destination: ExistingUserView()) {
+                        Text("       Account").foregroundColor(.black)
+                        Spacer()
+                        Label("", systemImage: "chevron.right")
+                            .foregroundColor(.black)
+                    }
+                    NavigationLink(destination: MoodView()) {
+                        Text("       Mood Report").foregroundColor(.black)
+                        Spacer()
+                        Label("", systemImage: "chevron.right")
+                            .foregroundColor(.black)
+                    }
+                    
+                    VStack {
+                        Form {
+//                            HStack {
+//                                Button(action: {
+//                                    account = true
+//                                }) {
+//                                    Text("Account").foregroundColor(.black)
+//                                }
+//                                Spacer()
+//                                Label("", systemImage: "chevron.right")
+//                                    .foregroundColor(.black)
+//                            }
+//
+//                            HStack {
+//                                Button(action: {
+//                                    moodReport = true
+//                                }) {
+//                                    Text("Mood Report").foregroundColor(.black)
+//                                }
+//                                Spacer()
+//                                Label("", systemImage: "chevron.right")
+//                                    .foregroundColor(.black)
+//                            }
+                            
+                            // No. of Notifications
+                            VStack {
+                                Text("No. of Notifications")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.headline)
+                                
+                                Slider(value: $notificationNum, in: 1...5, step: 1)
+                                {
+                                    Text("No. of Notifications")
+                                }
+                            minimumValueLabel: {
+                                Text("1")
+                            }
+                            maximumValueLabel: {
+                                Text("5")
+                            }
+                            onEditingChanged: { editing in
+                                isEditing = editing
+                            }
+                                
+                                Text("\(Int(notificationNum))")
+                            }
+                            
+                            // Selecting notification times
+                            VStack {
+                                Text("Notification Times")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.headline)
+                                
+                                Toggle(isOn: $randomTime) {
+                                    Text("Random Times")
+                                }
+                                
+                                if randomTime == false {
+                                    DatePicker("Please enter a time:", selection: $time, displayedComponents: .hourAndMinute)
+                                }
+                            }
+                            
+                            // Include Camera Roll
+                            Toggle(isOn: $includeCameraRoll) {
+                                Text("Camera Roll")
+                            }
+                            
+                            // Select Interests
+                            InterestsView()
+                            
+                        }
+                        .scrollContentBackground(.hidden)
+                        
+                        // Save button
+                        Button(action: {
+                            
+                        }) {
+                            Text("Save")
+                                .font(.title2)
+                                .bold()
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 200, height: 60)
+                                .background(Color.green)
+                                .cornerRadius(15.0)
+                        }
+                    }
                 }
-            minimumValueLabel: {
-                Text("1")
             }
-            maximumValueLabel: {
-                Text("5")
-            }
-            onEditingChanged: { editing in
-                isEditing = editing
-            }
-                
-                Text("\(Int(notificationNum))")
-            }
-            
-            // Selecting notification times
-            VStack {
-                Text("Notification Times")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.headline)
-                
-                Toggle(isOn: $randomTime) {
-                    Text("Random Times")
-                }
-                
-                if randomTime == false {
-                    DatePicker("Please enter a time:", selection: $time, displayedComponents: .hourAndMinute)
-                }
-            }
-            
-            // Include Camera Roll
-            Toggle(isOn: $includeCameraRoll) {
-                Text("Camera Roll")
-            }
-            
-            // Select Interests
-            InterestsView()
-            
         }
-        .scrollContentBackground(.hidden)
     }
 }
